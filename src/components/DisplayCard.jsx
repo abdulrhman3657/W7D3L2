@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 
 function DisplayCard() {
   const [item, setItem] = useState([]);
@@ -20,7 +20,8 @@ function DisplayCard() {
   }, [id]);
 
   return (
-    <div className="flex justify-center bg-blue-100 h-screen shadow-2xl">
+    <div className="flex flex-col items-center gap-3  h-screen bg-blue-100 shadow-2xl">
+      <Link to={"../"} className="my-5 rounded p-1 text-white bg-blue-500 hover:bg-blue-900 text-center">Go Back</Link>
       <div className="p-3 lg:w-8/10">
         <div className="flex flex-col items-center gap-5 py-5 bg-white rounded-xl p-3">
           <h1><span className="font-bold text-2xl">{item.title}</span></h1>
